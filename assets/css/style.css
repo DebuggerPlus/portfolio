@@ -112,6 +112,7 @@ button { font: inherit; }
 .projects-note { color: var(--text-secondary); font-size: 12px; margin-top: 18px; }
 .about-container { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px 70px; align-items: start; }
 .about-container .section-heading { margin-bottom: 0; }
+.about-intro { align-self: start; }
 .about-text { color: var(--text-secondary); font-size: 16px; }
 .about-text p + p { margin-top: 15px; }
 .about-photo { margin: 26px 0 0; max-width: 300px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--bg-secondary); box-shadow: 0 0 0 1px rgba(88,166,255,.08), 0 18px 40px -26px rgba(0,0,0,.95); }
