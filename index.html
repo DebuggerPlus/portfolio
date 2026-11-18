@@ -16,19 +16,29 @@
     <meta name="twitter:title" content="DebuggerPlus | Software Developer">
     <meta name="twitter:description" content="Independent software developer building AI-powered tools, desktop applications, automation systems and trading software.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      .header .lang { display: inline-flex; gap: 4px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 3px; margin-left: 14px; flex: 0 0 auto; }
+      .header .lang button { background: transparent; border: 0; color: #8b949e; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: .5px; padding: 4px 9px; border-radius: 6px; cursor: pointer; }
+      .header .lang button:hover { color: #e6edf3; }
+      .header .lang button.active { background: #1f6feb33; color: #79c0ff; }
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#home">Skip to content</a>
+    <a class="skip-link" href="#home" data-i18n="skip">Skip to content</a>
     <header class="header">
         <div class="container nav-container">
             <a href="#home" class="logo" aria-label="DebuggerPlus home">Debugger<span>Plus</span></a>
             <nav class="navigation" id="navigation" aria-label="Main navigation">
-                <a href="https://debuggerplus.github.io/">← All repositories</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#technologies">Technologies</a>
-                <a href="#contact">Contact</a>
+                <a href="https://debuggerplus.github.io/" data-i18n="navAll">← All repositories</a>
+                <a href="#projects" data-i18n="navProjects">Projects</a>
+                <a href="#about" data-i18n="navAbout">About</a>
+                <a href="#technologies" data-i18n="navTech">Technologies</a>
+                <a href="#contact" data-i18n="navContact">Contact</a>
             </nav>
+            <div class="lang" role="group" aria-label="Language / Язык">
+                <button type="button" data-lang-btn="en">EN</button>
+                <button type="button" data-lang-btn="ru">RU</button>
+            </div>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation">
                 <span></span><span></span><span></span>
             </button>
@@ -39,16 +49,16 @@
         <section class="hero" id="home">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="status"><span class="status-dot"></span> Independent Software Developer</div>
-                    <h1>Building software.<br>Exploring AI.<br><span>Solving real problems.</span></h1>
-                    <p class="hero-description">I build desktop applications, AI-powered tools, automation systems and experimental software projects. Turning ideas into working products.</p>
+                    <div class="status"><span class="status-dot"></span> <span data-i18n="status">Independent Software Developer</span></div>
+                    <h1 data-i18n-html="h1">Building software.<br>Exploring AI.<br><span>Solving real problems.</span></h1>
+                    <p class="hero-description" data-i18n="heroDesc">I build desktop applications, AI-powered tools, automation systems and experimental software projects. Turning ideas into working products.</p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="button button-primary">Explore Projects <span aria-hidden="true">↗</span></a>
-                        <a href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer" class="button button-secondary">GitHub <span aria-hidden="true">↗</span></a>
+                        <a href="#projects" class="button button-primary"><span data-i18n="btnProjects">Explore Projects</span> <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer" class="button button-secondary"><span data-i18n="btnGithub">GitHub</span> <span aria-hidden="true">↗</span></a>
                     </div>
                     <div class="hero-footer">
-                        <span>Currently exploring</span>
-                        <div class="focus-tags"><span>AI Agents</span><span>C# / .NET</span><span>Automation</span></div>
+                        <span data-i18n="heroExplore">Currently exploring</span>
+                        <div class="focus-tags"><span data-i18n="tag1">AI Agents</span><span data-i18n="tag2">C# / .NET</span><span data-i18n="tag3">Automation</span></div>
                     </div>
                 </div>
 
@@ -56,7 +66,7 @@
                     <div class="visual-card">
                         <div class="card-header">
                             <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <span class="card-label">Developer Workspace</span>
+                            <span class="card-label" data-i18n="cardLabel">Developer Workspace</span>
                         </div>
                         <div class="code-content" aria-hidden="true">
                             <div class="code-line"><span class="line-number">01</span><span class="code-purple">class</span> <span class="code-blue">Developer</span></div>
@@ -72,10 +82,10 @@
                             <div class="code-line"><span class="line-number">11</span>&nbsp;&nbsp;};</div>
                             <div class="code-line"><span class="line-number">12</span>}</div>
                         </div>
-                        <div class="visual-bottom"><span class="visual-indicator"></span><span>Always learning · Always building</span></div>
+                        <div class="visual-bottom"><span class="visual-indicator"></span><span data-i18n="visualBottom">Always learning · Always building</span></div>
                     </div>
-                    <div class="floating-badge badge-top" aria-hidden="true"><span class="badge-icon">AI</span><div><strong>Artificial Intelligence</strong><small>Exploring possibilities</small></div></div>
-                    <div class="floating-badge badge-bottom" aria-hidden="true"><span class="badge-icon">C#</span><div><strong>Software Development</strong><small>Building applications</small></div></div>
+                    <div class="floating-badge badge-top" aria-hidden="true"><span class="badge-icon">AI</span><div><strong data-i18n="badge1Title">Artificial Intelligence</strong><small data-i18n="badge1Sub">Exploring possibilities</small></div></div>
+                    <div class="floating-badge badge-bottom" aria-hidden="true"><span class="badge-icon">C#</span><div><strong data-i18n="badge2Title">Software Development</strong><small data-i18n="badge2Sub">Building applications</small></div></div>
                 </div>
             </div>
         </section>
@@ -83,57 +93,167 @@
         <section class="section" id="projects">
             <div class="container">
                 <div class="section-heading">
-                    <span class="section-label">MY WORK</span>
-                    <h2>Featured Projects</h2>
-                    <p>A collection of ideas, experiments and applications currently in development.</p>
+                    <span class="section-label" data-i18n="projectsLabel">MY WORK</span>
+                    <h2 data-i18n="projectsH2">Featured Projects</h2>
+                    <p data-i18n="projectsP">A collection of ideas, experiments and applications currently in development.</p>
                 </div>
                 <div class="projects-grid">
                     <article class="project-card">
-                        <div class="project-image project-image-bot"><span class="project-image-label">AI · LANGUAGE LEARNING</span><div class="mock-window" aria-hidden="true"><div class="mock-window-bar"></div><div class="mock-chat"><span class="mock-bubble">Let's practice English!</span><span class="mock-bubble mock-bubble-user">I want to improve my speaking.</span><span class="mock-bubble">Great! Let's get started.</span></div></div></div>
-                        <div class="project-card-content"><div class="project-title-row"><h3>EnglishTutorBot</h3><span class="project-status status-testing">Testing</span></div><p>AI-powered English learning assistant designed for vocabulary practice, interactive exercises and conversational learning.</p><div class="project-tags"><span>C#</span><span>ASP.NET Core</span><span>Telegram</span><span>AI</span></div><div class="project-links"><a href="https://github.com/AI-Agents-by-DebuggerPlus/EnglishTutorBot" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span class="link-placeholder" title="Add bot link when available">Demo coming soon</span></div></div>
+                        <div class="project-image project-image-bot"><span class="project-image-label" data-i18n="img1">AI · LANGUAGE LEARNING</span><div class="mock-window" aria-hidden="true"><div class="mock-window-bar"></div><div class="mock-chat"><span class="mock-bubble">Let's practice English!</span><span class="mock-bubble mock-bubble-user">I want to improve my speaking.</span><span class="mock-bubble">Great! Let's get started.</span></div></div></div>
+                        <div class="project-card-content"><div class="project-title-row"><h3>EnglishTutorBot</h3><span class="project-status status-testing" data-i18n="stTesting">Testing</span></div><p data-i18n="p1">AI-powered English learning assistant designed for vocabulary practice, interactive exercises and conversational learning.</p><div class="project-tags"><span>C#</span><span>ASP.NET Core</span><span>Telegram</span><span>AI</span></div><div class="project-links"><a href="https://github.com/AI-Agents-by-DebuggerPlus/EnglishTutorBot" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><span class="link-placeholder" title="Add bot link when available" data-i18n="demo">Demo coming soon</span></div></div>
                     </article>
                     <article class="project-card">
-                        <div class="project-image project-image-agents"><span class="project-image-label">AI · MULTI-AGENT SYSTEMS</span><div class="agent-diagram" aria-hidden="true"><span class="agent-node">Router</span><i></i><div class="agent-branches"><span class="agent-node">Developer</span><span class="agent-node">Tutor</span><span class="agent-node">Assistant</span></div></div></div>
-                        <div class="project-card-content"><div class="project-title-row"><h3>Hermes AI Ecosystem</h3><span class="project-status status-experimental">Experimental</span></div><p>Exploring autonomous AI agents, persistent memory, specialized roles, task routing and AI-assisted development.</p><div class="project-tags"><span>AI Agents</span><span>LLM</span><span>Automation</span></div><div class="project-links"><a href="https://github.com/AI-Agents-by-DebuggerPlus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+                        <div class="project-image project-image-agents"><span class="project-image-label" data-i18n="img2">AI · MULTI-AGENT SYSTEMS</span><div class="agent-diagram" aria-hidden="true"><span class="agent-node">Router</span><i></i><div class="agent-branches"><span class="agent-node">Developer</span><span class="agent-node">Tutor</span><span class="agent-node">Assistant</span></div></div></div>
+                        <div class="project-card-content"><div class="project-title-row"><h3>Hermes AI Ecosystem</h3><span class="project-status status-experimental" data-i18n="stExperimental">Experimental</span></div><p data-i18n="p2">Exploring autonomous AI agents, persistent memory, specialized roles, task routing and AI-assisted development.</p><div class="project-tags"><span>AI Agents</span><span>LLM</span><span>Automation</span></div><div class="project-links"><a href="https://github.com/AI-Agents-by-DebuggerPlus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
                     </article>
                     <article class="project-card">
-                        <div class="project-image project-image-recorder"><span class="project-image-label">DESKTOP · MEDIA</span><div class="recorder-ui" aria-hidden="true"><div class="recorder-screen"></div><div class="recorder-controls"><span class="recorder-dot"></span><span class="recorder-bar"></span><span class="recorder-button"></span></div></div></div>
-                        <div class="project-card-content"><div class="project-title-row"><h3>ScreenRecorder</h3><span class="project-status status-development">Development</span></div><p>Windows screen recording utility with configurable capture sources, regions, application windows and audio options.</p><div class="project-tags"><span>C#</span><span>WPF</span><span>Windows</span></div><div class="project-links"><a href="https://github.com/DebuggerPlus/ScreenRecorder" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+                        <div class="project-image project-image-recorder"><span class="project-image-label" data-i18n="img3">DESKTOP · MEDIA</span><div class="recorder-ui" aria-hidden="true"><div class="recorder-screen"></div><div class="recorder-controls"><span class="recorder-dot"></span><span class="recorder-bar"></span><span class="recorder-button"></span></div></div></div>
+                        <div class="project-card-content"><div class="project-title-row"><h3>ScreenRecorder</h3><span class="project-status status-development" data-i18n="stDevelopment">Development</span></div><p data-i18n="p3">Windows screen recording utility with configurable capture sources, regions, application windows and audio options.</p><div class="project-tags"><span>C#</span><span>WPF</span><span>Windows</span></div><div class="project-links"><a href="https://github.com/DebuggerPlus/ScreenRecorder" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
                     </article>
                     <article class="project-card">
-                        <div class="project-image project-image-trading"><span class="project-image-label">TRADING · ANALYTICS</span><div class="chart-visual" aria-hidden="true"><div class="chart-grid"></div><svg viewBox="0 0 400 150" role="img" aria-label="Decorative market chart"><polyline points="0,120 35,95 65,108 100,65 135,78 170,45 205,72 240,38 275,58 310,20 345,44 400,12" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="0,120 35,95 65,108 100,65 135,78 170,45 205,72 240,38 275,58 310,20 345,44 400,12" fill="none" stroke="currentColor" stroke-width="3" opacity=".15"/></svg></div></div>
-                        <div class="project-card-content"><div class="project-title-row"><h3>Trading Systems</h3><span class="project-status status-research">Research</span></div><p>Market analysis tools, order-book visualization, trading algorithms and risk management experiments.</p><div class="project-tags"><span>C#</span><span>MQL5</span><span>Binance API</span></div><div class="project-links"><a href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+                        <div class="project-image project-image-trading"><span class="project-image-label" data-i18n="img4">TRADING · ANALYTICS</span><div class="chart-visual" aria-hidden="true"><div class="chart-grid"></div><svg viewBox="0 0 400 150" role="img" aria-label="Decorative market chart"><polyline points="0,120 35,95 65,108 100,65 135,78 170,45 205,72 240,38 275,58 310,20 345,44 400,12" fill="none" stroke="currentColor" stroke-width="3"/><polyline points="0,120 35,95 65,108 100,65 135,78 170,45 205,72 240,38 275,58 310,20 345,44 400,12" fill="none" stroke="currentColor" stroke-width="3" opacity=".15"/></svg></div></div>
+                        <div class="project-card-content"><div class="project-title-row"><h3>Trading Systems</h3><span class="project-status status-research" data-i18n="stResearch">Research</span></div><p data-i18n="p4">Market analysis tools, order-book visualization, trading algorithms and risk management experiments.</p><div class="project-tags"><span>C#</span><span>MQL5</span><span>Binance API</span></div><div class="project-links"><a href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div>
                     </article>
                 </div>
-                <p class="projects-note">Project descriptions and statuses may change as development progresses.</p>
+                <p class="projects-note" data-i18n="projectsNote">Project descriptions and statuses may change as development progresses.</p>
             </div>
         </section>
 
         <section class="section" id="about">
             <div class="container about-container">
-                <div class="section-heading"><span class="section-label">ABOUT</span><h2>Building through experimentation.</h2></div>
+                <div class="section-heading"><span class="section-label" data-i18n="aboutLabel">ABOUT</span><h2 data-i18n="aboutH2">Building through experimentation.</h2></div>
                 <div class="about-text">
-                    <p>I'm an independent software developer interested in building practical software, exploring artificial intelligence and creating tools that solve real-world problems.</p>
-                    <p>My background includes C#, .NET, desktop application development and algorithmic trading. Currently, I'm expanding my work into AI agents, automation, web technologies and intelligent applications.</p>
-                    <p>I believe in learning by building — turning ideas into working prototypes, experimenting with new technologies and continuously improving my projects.</p>
+                    <p data-i18n="aboutP1">I'm an independent software developer interested in building practical software, exploring artificial intelligence and creating tools that solve real-world problems.</p>
+                    <p data-i18n="aboutP2">My background includes C#, .NET, desktop application development and algorithmic trading. Currently, I'm expanding my work into AI agents, automation, web technologies and intelligent applications.</p>
+                    <p data-i18n="aboutP3">I believe in learning by building — turning ideas into working prototypes, experimenting with new technologies and continuously improving my projects.</p>
                 </div>
-                <div class="focus-grid"><div><span class="focus-number">01</span><h3>Build</h3><p>Turn ideas into useful applications and prototypes.</p></div><div><span class="focus-number">02</span><h3>Explore</h3><p>Experiment with AI, automation and emerging technologies.</p></div><div><span class="focus-number">03</span><h3>Improve</h3><p>Learn continuously and refine projects through practice.</p></div></div>
+                <div class="focus-grid"><div><span class="focus-number">01</span><h3 data-i18n="f1h">Build</h3><p data-i18n="f1p">Turn ideas into useful applications and prototypes.</p></div><div><span class="focus-number">02</span><h3 data-i18n="f2h">Explore</h3><p data-i18n="f2p">Experiment with AI, automation and emerging technologies.</p></div><div><span class="focus-number">03</span><h3 data-i18n="f3h">Improve</h3><p data-i18n="f3p">Learn continuously and refine projects through practice.</p></div></div>
             </div>
         </section>
 
         <section class="section" id="technologies">
             <div class="container">
-                <div class="section-heading"><span class="section-label">TECHNOLOGIES</span><h2>Tools I work with</h2><p>A practical and evolving toolkit.</p></div>
+                <div class="section-heading"><span class="section-label" data-i18n="techLabel">TECHNOLOGIES</span><h2 data-i18n="techH2">Tools I work with</h2><p data-i18n="techP">A practical and evolving toolkit.</p></div>
                 <div class="technology-list"><span>C#</span><span>.NET</span><span>WPF</span><span>ASP.NET Core</span><span>Python</span><span>MQL5</span><span>Git</span><span>GitHub</span><span>REST APIs</span><span>AI / LLM</span><span>Automation</span></div>
             </div>
         </section>
 
         <section class="section contact-section" id="contact">
-            <div class="container"><div class="contact-content"><span class="section-label">GET IN TOUCH</span><h2>Let's build something interesting.</h2><p>Interested in my projects, collaboration or testing an application? Feel free to reach out.</p><div class="contact-links"><a class="button button-primary" href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer">Visit GitHub <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/DebuggerPlus?tab=repositories" target="_blank" rel="noopener noreferrer">Explore repositories <span aria-hidden="true">↗</span></a></div></div></div>
+            <div class="container"><div class="contact-content"><span class="section-label" data-i18n="contactLabel">GET IN TOUCH</span><h2 data-i18n="contactH2">Let's build something interesting.</h2><p data-i18n="contactP">Interested in my projects, collaboration or testing an application? Feel free to reach out.</p><div class="contact-links"><a class="button button-primary" href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact1">Visit GitHub</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/DebuggerPlus?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact2">Explore repositories</span> <span aria-hidden="true">↗</span></a></div></div></div>
         </section>
     </main>
 
-    <footer class="footer"><div class="container footer-container"><a href="#home" class="logo">Debugger<span>Plus</span></a><p>© <span id="currentYear"></span> DebuggerPlus · Built with curiosity · <a href="https://debuggerplus.github.io/">All repositories</a></p><a class="back-to-top" href="#home">Back to top ↑</a></div></footer>
+    <footer class="footer"><div class="container footer-container"><a href="#home" class="logo">Debugger<span>Plus</span></a><p>© <span id="currentYear"></span> · <span data-i18n="footNote">DebuggerPlus · Built with curiosity</span> · <a href="https://debuggerplus.github.io/" data-i18n="footBack">All repositories</a></p><a class="back-to-top" href="#home" data-i18n="backToTop">Back to top ↑</a></div></footer>
     <script src="assets/js/main.js"></script>
+    <script>
+    (() => {
+      "use strict";
+      const DICT = {
+        en: {
+          title:"DebuggerPlus | Software Developer", skip:"Skip to content",
+          navAll:"← All repositories", navProjects:"Projects", navAbout:"About", navTech:"Technologies", navContact:"Contact",
+          status:"Independent Software Developer",
+          h1:"Building software.<br>Exploring AI.<br><span>Solving real problems.</span>",
+          heroDesc:"I build desktop applications, AI-powered tools, automation systems and experimental software projects. Turning ideas into working products.",
+          btnProjects:"Explore Projects", btnGithub:"GitHub",
+          heroExplore:"Currently exploring", tag1:"AI Agents", tag2:"C# / .NET", tag3:"Automation",
+          cardLabel:"Developer Workspace", visualBottom:"Always learning · Always building",
+          badge1Title:"Artificial Intelligence", badge1Sub:"Exploring possibilities",
+          badge2Title:"Software Development", badge2Sub:"Building applications",
+          projectsLabel:"MY WORK", projectsH2:"Featured Projects",
+          projectsP:"A collection of ideas, experiments and applications currently in development.",
+          img1:"AI · LANGUAGE LEARNING", img2:"AI · MULTI-AGENT SYSTEMS", img3:"DESKTOP · MEDIA", img4:"TRADING · ANALYTICS",
+          stTesting:"Testing", stExperimental:"Experimental", stDevelopment:"Development", stResearch:"Research",
+          p1:"AI-powered English learning assistant designed for vocabulary practice, interactive exercises and conversational learning.",
+          p2:"Exploring autonomous AI agents, persistent memory, specialized roles, task routing and AI-assisted development.",
+          p3:"Windows screen recording utility with configurable capture sources, regions, application windows and audio options.",
+          p4:"Market analysis tools, order-book visualization, trading algorithms and risk management experiments.",
+          demo:"Demo coming soon",
+          projectsNote:"Project descriptions and statuses may change as development progresses.",
+          aboutLabel:"ABOUT", aboutH2:"Building through experimentation.",
+          aboutP1:"I'm an independent software developer interested in building practical software, exploring artificial intelligence and creating tools that solve real-world problems.",
+          aboutP2:"My background includes C#, .NET, desktop application development and algorithmic trading. Currently, I'm expanding my work into AI agents, automation, web technologies and intelligent applications.",
+          aboutP3:"I believe in learning by building — turning ideas into working prototypes, experimenting with new technologies and continuously improving my projects.",
+          f1h:"Build", f1p:"Turn ideas into useful applications and prototypes.",
+          f2h:"Explore", f2p:"Experiment with AI, automation and emerging technologies.",
+          f3h:"Improve", f3p:"Learn continuously and refine projects through practice.",
+          techLabel:"TECHNOLOGIES", techH2:"Tools I work with", techP:"A practical and evolving toolkit.",
+          contactLabel:"GET IN TOUCH", contactH2:"Let's build something interesting.",
+          contactP:"Interested in my projects, collaboration or testing an application? Feel free to reach out.",
+          btnContact1:"Visit GitHub", btnContact2:"Explore repositories",
+          footNote:"DebuggerPlus · Built with curiosity", footBack:"All repositories", backToTop:"Back to top ↑"
+        },
+        ru: {
+          title:"DebuggerPlus | Разработчик ПО", skip:"Перейти к содержимому",
+          navAll:"← Все репозитории", navProjects:"Проекты", navAbout:"Обо мне", navTech:"Технологии", navContact:"Контакты",
+          status:"Независимый разработчик ПО",
+          h1:"Строю софт.<br>Исследую ИИ.<br><span>Решаю реальные задачи.</span>",
+          heroDesc:"Создаю десктопные приложения, инструменты с ИИ, системы автоматизации и экспериментальное ПО. Превращаю идеи в работающие продукты.",
+          btnProjects:"Смотреть проекты", btnGithub:"GitHub",
+          heroExplore:"Сейчас изучаю", tag1:"AI-агенты", tag2:"C# / .NET", tag3:"Автоматизация",
+          cardLabel:"Рабочее пространство разработчика", visualBottom:"Всегда учусь · Всегда создаю",
+          badge1Title:"Искусственный интеллект", badge1Sub:"Изучаю возможности",
+          badge2Title:"Разработка ПО", badge2Sub:"Создаю приложения",
+          projectsLabel:"МОИ РАБОТЫ", projectsH2:"Избранные проекты",
+          projectsP:"Подборка идей, экспериментов и приложений в разработке.",
+          img1:"ИИ · ИЗУЧЕНИЕ ЯЗЫКОВ", img2:"ИИ · МУЛЬТИАГЕНТНЫЕ СИСТЕМЫ", img3:"ДЕСКТОП · МЕДИА", img4:"ТРЕЙДИНГ · АНАЛИТИКА",
+          stTesting:"Тестирование", stExperimental:"Эксперимент", stDevelopment:"В разработке", stResearch:"Исследование",
+          p1:"Ассистент для изучения английского на базе ИИ: практика лексики, интерактивные упражнения и разговорные занятия.",
+          p2:"Исследую автономных ИИ-агентов, постоянную память, специализированные роли, маршрутизацию задач и разработку с помощью ИИ.",
+          p3:"Утилита для записи экрана Windows с настраиваемыми источниками захвата, областями, окнами приложений и звуком.",
+          p4:"Инструменты анализа рынка, визуализация стакана заявок, торговые алгоритмы и эксперименты по управлению рисками.",
+          demo:"Демо скоро",
+          projectsNote:"Описания и статусы проектов могут меняться по мере разработки.",
+          aboutLabel:"ОБО МНЕ", aboutH2:"Создаю через эксперименты.",
+          aboutP1:"Я независимый разработчик ПО. Мне интересно делать практичный софт, исследовать искусственный интеллект и создавать инструменты, решающие реальные задачи.",
+          aboutP2:"Мой опыт включает C#, .NET, разработку десктопных приложений и алгоритмическую торговлю. Сейчас расширяю работу в сторону ИИ-агентов, автоматизации, веб-технологий и интеллектуальных приложений.",
+          aboutP3:"Я верю в обучение через практику — превращаю идеи в работающие прототипы, экспериментирую с новыми технологиями и постоянно улучшаю свои проекты.",
+          f1h:"Создаю", f1p:"Превращаю идеи в полезные приложения и прототипы.",
+          f2h:"Исследую", f2p:"Экспериментирую с ИИ, автоматизацией и новыми технологиями.",
+          f3h:"Улучшаю", f3p:"Учусь постоянно и улучшаю проекты на практике.",
+          techLabel:"ТЕХНОЛОГИИ", techH2:"Инструменты, с которыми работаю", techP:"Практичный и развивающийся набор инструментов.",
+          contactLabel:"СВЯЗАТЬСЯ", contactH2:"Давай создадим что-то интересное.",
+          contactP:"Интересны мои проекты, сотрудничество или тестирование приложения? Напиши мне.",
+          btnContact1:"Открыть GitHub", btnContact2:"Смотреть репозитории",
+          footNote:"DebuggerPlus · Сделано из любопытства", footBack:"Все репозитории", backToTop:"Наверх ↑"
+        }
+      };
+
+      const LANG_KEY = "dp-lang";
+      let lang = "en";
+
+      function applyLang(next) {
+        lang = next === "ru" ? "ru" : "en";
+        const t = DICT[lang];
+        document.documentElement.lang = lang;
+        document.title = t.title;
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const v = t[el.getAttribute("data-i18n")];
+          if (v != null) el.textContent = v;
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach(el => {
+          const v = t[el.getAttribute("data-i18n-html")];
+          if (v != null) el.innerHTML = v;
+        });
+        document.querySelectorAll("[data-lang-btn]").forEach(b => {
+          const on = b.dataset.langBtn === lang;
+          b.classList.toggle("active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+      }
+
+      document.querySelectorAll("[data-lang-btn]").forEach(b =>
+        b.addEventListener("click", () => applyLang(b.dataset.langBtn)));
+
+      const p = new URLSearchParams(location.search).get("lang");
+      let initial = (p === "ru" || p === "en") ? p : null;
+      if (!initial) { try { initial = localStorage.getItem(LANG_KEY); } catch (e) { initial = null; } }
+      if (initial !== "ru" && initial !== "en") {
+        initial = (navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en";
+      }
+      applyLang(initial);
+    })();
+    </script>
 </body>
 </html>
