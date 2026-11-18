@@ -123,7 +123,7 @@
 
         <section class="section" id="about">
             <div class="container about-container">
-                <div class="section-heading"><span class="section-label" data-i18n="aboutLabel">ABOUT</span><h2 data-i18n="aboutH2">Building through experimentation.</h2></div>
+                <div class="section-heading"><span class="section-label" data-i18n="aboutLabel">ABOUT</span><h2 data-i18n="aboutH2">Building through experimentation.</h2></div><figure class="about-photo"><img src="assets/img/avatar.jpg" srcset="assets/img/avatar.jpg 504w, assets/img/avatar@720.jpg 720w" sizes="(max-width: 1000px) 320px, 300px" width="504" height="504" alt="Portrait of DebuggerPlus" data-i18n-alt="altPhoto" loading="lazy" decoding="async"></figure>
                 <div class="about-text">
                     <p data-i18n="aboutP1">I'm an independent software developer interested in building practical software, exploring artificial intelligence and creating tools that solve real-world problems.</p>
                     <p data-i18n="aboutP2">My background includes C#, .NET, desktop application development and algorithmic trading. Currently, I'm expanding my work into AI agents, automation, web technologies and intelligent applications.</p>
@@ -176,6 +176,7 @@
           aboutP1:"I'm an independent software developer interested in building practical software, exploring artificial intelligence and creating tools that solve real-world problems.",
           aboutP2:"My background includes C#, .NET, desktop application development and algorithmic trading. Currently, I'm expanding my work into AI agents, automation, web technologies and intelligent applications.",
           aboutP3:"I believe in learning by building — turning ideas into working prototypes, experimenting with new technologies and continuously improving my projects.",
+          altPhoto:"Portrait of the developer behind DebuggerPlus",
           f1h:"Build", f1p:"Turn ideas into useful applications and prototypes.",
           f2h:"Explore", f2p:"Experiment with AI, automation and emerging technologies.",
           f3h:"Improve", f3p:"Learn continuously and refine projects through practice.",
@@ -211,6 +212,7 @@
           aboutP1:"Я независимый разработчик ПО. Мне интересно делать практичный софт, исследовать искусственный интеллект и создавать инструменты, решающие реальные задачи.",
           aboutP2:"Мой опыт включает C#, .NET, разработку десктопных приложений и алгоритмическую торговлю. Сейчас расширяю работу в сторону ИИ-агентов, автоматизации, веб-технологий и интеллектуальных приложений.",
           aboutP3:"Я верю в обучение через практику — превращаю идеи в работающие прототипы, экспериментирую с новыми технологиями и постоянно улучшаю свои проекты.",
+          altPhoto:"Портрет разработчика DebuggerPlus",
           f1h:"Создаю", f1p:"Превращаю идеи в полезные приложения и прототипы.",
           f2h:"Исследую", f2p:"Экспериментирую с ИИ, автоматизацией и новыми технологиями.",
           f3h:"Улучшаю", f3p:"Учусь постоянно и улучшаю проекты на практике.",
@@ -238,6 +240,10 @@
         document.querySelectorAll("[data-i18n-html]").forEach(el => {
           const v = t[el.getAttribute("data-i18n-html")];
           if (v != null) el.innerHTML = v;
+        });
+        document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+          const v = t[el.getAttribute("data-i18n-alt")];
+          if (v != null) el.setAttribute("alt", v);
         });
         document.querySelectorAll("[data-lang-btn]").forEach(b => {
           const on = b.dataset.langBtn === lang;
