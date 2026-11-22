@@ -141,7 +141,7 @@
         </section>
 
         <section class="section contact-section" id="contact">
-            <div class="container"><div class="contact-content"><span class="section-label" data-i18n="contactLabel">GET IN TOUCH</span><h2 data-i18n="contactH2">Let's build something interesting.</h2><p data-i18n="contactP">Interested in my projects, collaboration or testing an application? Feel free to reach out.</p><div class="contact-links"><a class="button button-primary" href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact1">Visit GitHub</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/DebuggerPlus?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact2">Explore repositories</span> <span aria-hidden="true">↗</span></a></div><div class="contact-communities"><span class="comm-label" data-i18n="commLabel">Communities</span><div class="contact-links"><a class="button button-secondary" href="https://t.me/+QqNnR7oTtGw5MmMx" target="_blank" rel="noopener noreferrer"><span data-i18n="btnTelegram">Telegram chat</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://discord.gg/VET58PT6dJ" target="_blank" rel="noopener noreferrer"><span data-i18n="btnDiscordRu">Discord — Russian community</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://discord.gg/hMyK8P5nV7" target="_blank" rel="noopener noreferrer"><span data-i18n="btnDiscordEn">Discord — English community</span> <span aria-hidden="true">↗</span></a></div></div></div></div>
+            <div class="container"><div class="contact-content"><span class="section-label" data-i18n="contactLabel">GET IN TOUCH</span><h2 data-i18n="contactH2">Let's build something interesting.</h2><p data-i18n="contactP">Interested in my projects, collaboration or testing an application? Feel free to reach out.</p><div class="contact-links"><a class="button button-primary" href="https://github.com/DebuggerPlus" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact1">Visit GitHub</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://github.com/DebuggerPlus?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-i18n="btnContact2">Explore repositories</span> <span aria-hidden="true">↗</span></a></div><div class="contact-communities"><span class="comm-label" data-i18n="commLabel">Communities</span><div class="contact-links"><a class="button button-secondary" href="https://t.me/+QqNnR7oTtGw5MmMx" target="_blank" rel="noopener noreferrer"><span data-i18n="btnTelegram">Telegram chat</span> <span aria-hidden="true">↗</span></a><a class="button button-secondary" data-discord-link href="https://discord.gg/hMyK8P5nV7" target="_blank" rel="noopener noreferrer"><span data-i18n="btnDiscord">Discord</span> <span aria-hidden="true">↗</span></a></div></div></div></div>
         </section>
     </main>
 
@@ -184,7 +184,7 @@
           contactLabel:"GET IN TOUCH", contactH2:"Let's build something interesting.",
           contactP:"Interested in my projects, collaboration or testing an application? Feel free to reach out.",
           btnContact1:"Visit GitHub", btnContact2:"Explore repositories",
-          commLabel:"Communities", btnTelegram:"Telegram chat", btnDiscordRu:"Discord — Russian community", btnDiscordEn:"Discord — English community",
+          commLabel:"Communities", btnTelegram:"Telegram chat", btnDiscord:"Discord",
           footNote:"DebuggerPlus · Built with curiosity", footBack:"All repositories", backToTop:"Back to top ↑"
         },
         ru: {
@@ -220,12 +220,13 @@
           contactLabel:"СВЯЗАТЬСЯ", contactH2:"Давай создадим что-то интересное.",
           contactP:"Интересны мои проекты, сотрудничество или тестирование приложения? Напиши мне.",
           btnContact1:"Открыть GitHub", btnContact2:"Смотреть репозитории",
-          commLabel:"Сообщества", btnTelegram:"Telegram-чат", btnDiscordRu:"Discord — русскоязычное сообщество", btnDiscordEn:"Discord — англоязычное сообщество",
+          commLabel:"Сообщества", btnTelegram:"Telegram-чат", btnDiscord:"Discord",
           footNote:"DebuggerPlus · Сделано из любопытства", footBack:"Все репозитории", backToTop:"Наверх ↑"
         }
       };
 
       const LANG_KEY = "dp-lang";
+      const DISCORD = { ru: "https://discord.gg/VET58PT6dJ", en: "https://discord.gg/hMyK8P5nV7" };
       let lang = "en";
 
       function applyLang(next) {
@@ -233,6 +234,9 @@
         const t = DICT[lang];
         document.documentElement.lang = lang;
         document.title = t.title;
+        document.querySelectorAll("[data-discord-link]").forEach(a => {
+          a.href = DISCORD[lang];
+        });
         document.querySelectorAll("[data-i18n]").forEach(el => {
           const v = t[el.getAttribute("data-i18n")];
           if (v != null) el.textContent = v;
